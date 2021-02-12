@@ -6,6 +6,7 @@ use App\News;
 use App\Category;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 use App\Http\Controllers\Controller;
 
@@ -120,6 +121,10 @@ class NewsController extends Controller
      */
     public function destroy(News $news)
     {
+        Storage::delete(
+            str_replace('/storage', 'public', $news->image)
+        );
+
         $news->categories()->sync([]);
 
         $news->delete();

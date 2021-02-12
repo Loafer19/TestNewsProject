@@ -17,9 +17,7 @@ class NewsController extends Controller
     public function index()
     {
         $news = News::when(request()->has('categories'), function ($query) {
-            return $query->whereHas('categories', function ($query) {
-                $query->whereIn('id', request()->categories);
-            });
+            return $query->filterCategories(request()->categories);
         })->paginate(9);
 
         $categories = Category::all();

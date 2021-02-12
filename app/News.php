@@ -12,4 +12,11 @@ class News extends Model
     {
         return $this->belongsToMany(Category::class);
     }
+
+    public function scopeFilterCategories($query, $categories)
+    {
+        return $query->whereHas('categories', function ($query) use ($categories) {
+            $query->whereIn('id', $categories);
+        });
+    }
 }
