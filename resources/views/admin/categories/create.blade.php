@@ -11,7 +11,7 @@
                         <form action="{{ route('admin.categories.store') }}" method="post">
                             @csrf
                             <div class="form-group">
-                                <input type="text" class="form-control" name="name" required minlength="2">
+                                <input type="text" class="form-control" name="name" placeholder="Name" required minlength="2" value="{{ old('name') }}">
                             </div>
 
                             <button type="submit" class="btn btn-primary">Submit</button>

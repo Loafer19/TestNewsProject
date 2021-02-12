@@ -97,6 +97,8 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
+        $category->news()->sync([]);
+
         $category->delete();
 
         return redirect()->route('admin.categories.index');

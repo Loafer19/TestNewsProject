@@ -36,6 +36,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('admin.categories.index') }}">{{ __('Categories') }}</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('admin.news.index') }}">{{ __('News') }}</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -75,6 +78,7 @@
         </nav>
 
         <main class="py-4">
+            @include('includes.errors')
             @yield('content')
         </main>
     </div>

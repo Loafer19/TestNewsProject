@@ -12,7 +12,7 @@
                             @csrf
                             @method('PATCH')
                             <div class="form-group">
-                                <input type="text" class="form-control" name="name" required minlength="2" value="{{ $category->name }}">
+                                <input type="text" class="form-control" name="name" placeholder="Name" required minlength="2" value="{{ old('name', $category->name) }}">
                             </div>
 
                             <button type="submit" class="btn btn-primary">Submit</button>
