@@ -14,7 +14,7 @@
                             @endforeach
                         </h5>
                         <p class="card-text">{{ $news->short_text }}</p>
-                        <p class="card-text">{{ $news->text }}</p>
+                        <p class="card-text">{!! $news->text !!}</p>
                     </div>
                 </div>
             </div>

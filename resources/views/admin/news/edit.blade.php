@@ -20,7 +20,7 @@
                             </div>
 
                             <div class="form-group">
-                                <textarea name="text" id="text" class="form-control" rows="10" placeholder="Text" required minlength="10">{{ old('text', $news->text) }}</textarea>
+                                <textarea name="text" id="text-textarea" class="form-control" rows="10" placeholder="Text" required minlength="10">{{ old('text', $news->text) }}</textarea>
                             </div>
 
                             <div class="form-group">
@@ -42,4 +42,13 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('scripts')
+    <script src="https://cdn.tiny.cloud/1/{{ env('TINY_KEY') }}/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+        tinymce.init({
+            selector: '#text-textarea'
+        });
+    </script>
 @endsection

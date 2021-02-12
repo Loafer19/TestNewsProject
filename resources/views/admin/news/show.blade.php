@@ -16,7 +16,7 @@
                         </h5>
 
                         <p>{{ $news->short_text }}</p>
-                        <p>{{ $news->text }}</p>
+                        <p>{!! $news->text !!}</p>
                         <img class="img-fluid mb-3" src="{{ $news->image }}" alt="">
 
                         <form action="{{ route('admin.news.destroy', $news) }}" method="post">
